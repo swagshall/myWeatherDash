@@ -55,44 +55,59 @@ function getCurrData(data, citySearch){
 
 
     var cityName = data.name;
-    var temp = data.main.temp;
-    var hum =data.main.humidity
-    var ws = data.wind.speed;
+    today.append(cityName +": " + currDate );
 
-    //cr8 tags for info
+    var todaysWeatherIcon = data.weather[0].icon;
+    var weathEmoj = 'https://openweathermap.org/img/wn/' + todaysWeatherIcon + ".png";
+    var getIcon = document.createElement('img')
+    getIcon.setAttribute('src', weathEmoj);
+    today.append(getIcon)
+    
+
+    var temp = data.main.temp;
     var fahrenheit = document.createElement('p');
+    fahrenheit.textContent=("Temperature: " + temp + "°F")
+    today.append(fahrenheit);
+    
+
+    var hum =data.main.humidity
     var humidity = document.createElement('p');
+    humidity.textContent=("Humidity: " + hum + '%')
+    today.append(humidity);
+    
+
+    var ws = data.wind.speed;
+    var windSpeed = document.createElement('p');
+    windSpeed.textContent=("Wind Speed: " + ws + " MPH")
+    today.append(windSpeed);
+
+
+
+
     var UVindexEl = document.createElement('span');
     UVindexEl.textContent=("UV Index: ");
     var indexNumber = parseFloat(data.value)
     var indexNumEl = document.createElement('span');
-    var windSpeed = document.createElement('p');
     indexNumEl.textContent=(indexNumber);
     indexNumEl.setAttribute('id', 'index-number');
-    var todaysWeatherIcon = data.weather[0].icon;
-
-
-   
-    fahrenheit.textContent=("Temperature: " + temp + "°F")
-    humidity.textContent=("Humidity: " + hum + '%')
-    windSpeed.textContent=("Wind Speed: " + ws + " MPH")
-    var weathEmoj = 'https://openweathermap.org/img/wn/' + todaysWeatherIcon + ".png";
-    var getIcon = document.createElement('img')
-    getIcon.setAttribute('src', weathEmoj);
+    
 
     
 
-    today.append(cityName +": " + currDate );
-    today.append(getIcon)
-    today.append(fahrenheit);
-    today.append(humidity);
-    today.append(windSpeed);
+   
+    
     today.append(UVindexEl);
     today.append(indexNumEl);
+
+    getFiveDay();
 
                  
 
     
+}
+
+function getFiveDay(){
+    console.log("In five day")
 }
 
 
