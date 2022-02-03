@@ -14,18 +14,26 @@
     </header>
 
       <div class="card col-md-4">
-        <h3 class="card-header text-uppercase">Search By Product</h3>
-        <form id="product-form" class="card-body">
-          <label class="form-label" for="retailer">Retailer:</label>
-          <input name="retailer" id="retailer" type="text" autofocus="true" class="form-input" />
+        <h3 class="card-header text-uppercase">Search By Location</h3>
+        <form id="location-form" class="card-body">
+          <label class="form-label" for="location">Location:</label>
+          <input name="location" id="location" type="text" autofocus="true" class="form-input" />
+         
           <br>
-          <label class="form-label" for="product">Product:</label>
-          <input name="product" id="product" type="text" autofocus="true" class="form-input" />
-          <br>
-          <button type="submit" class="btn">Get Weather</button>
+          <button type="submit" class="btn" id='getBtn'>Get Weather</button>
         </form>
       </div>
-    
+
+
+      <main>
+        <div class="row">
+        <div class="card col-md-8">
+          <h2 class="subtitle">Current Weather: <span id="currWeather"></span></h2>
+          <div id="currWeathContainer" class="list-group"></div>
+        </div>
+      </div>
+      </main>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script src="script.js"></script>
 </body>
 </html>
