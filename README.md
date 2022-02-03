@@ -3,4 +3,5 @@ This website uses the openweather api to pull the data/ weather of a location sp
 
 To visit this website, click on this link: https://swagshall.github.io/myWeatherDash/
 
-Here is a screen shot of the website:
+Here is a screen shot of the website: 
+<img src="./assets/images/myWeatherDash.png" alt="screenshot 1">
