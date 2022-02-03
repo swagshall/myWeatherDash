@@ -1,1 +1,16 @@
+.bg-primary {
+    background-color: #2d3e50;
+}
 
+.text-white {
+    color: #ffffff;
+}
+.text-center {
+    text-align: center;
+}
+.p-5 {
+    padding: 1.625rem;
+}
+.btn{
+    border: black;
+}
