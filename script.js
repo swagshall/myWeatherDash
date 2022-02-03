@@ -1,13 +1,13 @@
 
 console.log("IN SCRIPT!!!!")
 
-var getLoc=document.getElementById('location-form');
-// var apiUrl='https://api.openweathermap.org/data/2.5/weather?q=' + {citySearch}+ '&units=metric=3b55a267ab7fd7c8d9aeb4d81c487408'
+var getLoc=document.getElementById('getBtn');
+var apiUrl='https://api.openweathermap.org/data/2.5/weather?q=' + {citySearch}+ '&units=metric=3b55a267ab7fd7c8d9aeb4d81c487408'
 var citySearch= document.getElementsByClassName('form-input').textContent;
-var apiUrl='https://api.openweathermap.org/data/2.5/weather?q=new%20york&appid=3b55a267ab7fd7c8d9aeb4d81c487408'
+//var apiUrl='https://api.openweathermap.org/data/2.5/weather?q=new%20york&appid=3b55a267ab7fd7c8d9aeb4d81c487408'
 var currLocation= document.getElementById('currWeather')
 var today=document.getElementById('currWeathContainer')
-
+var currDate = moment().format("MM-DD-YYYY")
 
 
 function getWeather(e, citySearch){
@@ -51,18 +51,31 @@ function getCurrData(res, citySearch){
 
     var cityName = res.name;
     var temp = res.temp;
-    //var windSpeed = res.wind.speed;
+    var hum =res.humidity
     
     //cr8 tags for info
     var fahrenheit = document.createElement('p');
     var humidity = document.createElement('p');
-    //var impWindSpeed = document.createElement('p');
     var UVindexEl = document.createElement('span');
     UVindexEl.textContent=("UV Index: ");
     var indexNumber = parseFloat(res.value)
     var indexNumEl = document.createElement('span');
     indexNumEl.textContent=(indexNumber);
-    indexNumEl.attr('id', 'index-number');
+    indexNumEl.setAttribute('id', 'index-number');
+    console.log("over here");
+
+
+   
+    fahrenheit.textContent=("Temperature: " + temp + "°F")
+    humidity.textContent=("Humidity: " + hum + '%')
+
+    
+
+    today.append(cityName +": " + currDate );
+    today.append(fahrenheit);
+    today.append(humidity);
+    today.append(UVindexEl);
+    today.append(indexNumEl);
 
                  
 
@@ -71,4 +84,3 @@ function getCurrData(res, citySearch){
 
 
 getLoc.addEventListener('click', getWeather);
-//console.log(apiUrl)
