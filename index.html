@@ -27,11 +27,52 @@
 
       <main>
         <div class="row">
-        <div class="card col-md-8">
+        <div class="card w-100 col-8">
           <h2 class="subtitle">Current Weather: <span id="currWeather"></span></h2>
-          <div id="currWeathContainer" class="list-group"></div>
+          <div id="currWeathContainer" class="cardBody city"></div>
         </div>
       </div>
+
+      <div class="week">
+        <h3>5-Day Forecast:</h3>
+        <div class="row " id="fiveDay">
+          <div class="col-sm-2">
+            <div class="five card mb-3">
+              <div id="day1" class="cardBody">
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="five card mb-3">
+              <div id="day2" class="cardBody">
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="five card mb-3">
+              <div id="day3" class="cardBody">
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="five card mb-3">
+              <div id="day4" class="cardBody">
+                <p class="info"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="five card mb-3">
+              <div id="day5" class="cardBody">
+                <p class="info"></p>
+                </div>
+              </div>
+            </div>
+        </div>
+
       </main>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
       <script src="script.js"></script>
