@@ -58,10 +58,10 @@ function getCurrData(res, citySearch){
     var humidity = document.createElement('p');
     //var impWindSpeed = document.createElement('p');
     var UVindexEl = document.createElement('span');
-    UVindexEl.text("UV Index: ");
+    UVindexEl.textContent=("UV Index: ");
     var indexNumber = parseFloat(res.value)
     var indexNumEl = document.createElement('span');
-    indexNumEl.textContent(indexNumber);
+    indexNumEl.textContent=(indexNumber);
     indexNumEl.attr('id', 'index-number');
 
                  
